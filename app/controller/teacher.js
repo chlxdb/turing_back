@@ -1,8 +1,15 @@
 'use strict'
-
+/**
+ * @Controller 指导教师操作
+ */
 const Controller = require('egg').Controller
 //ctx 是上下文，可以在 ctx 中拿到全局对象 app
 class TeacherController extends Controller {
+  /**
+   * @summary 获取教师信息
+   * @description 直接获取信息
+   * @router get /api/teacher/getTeacherInfo
+   */
   // 获取信息
   async getTeacherInfo() {
     const { ctx, app } = this
@@ -16,7 +23,13 @@ class TeacherController extends Controller {
       data: result,
     }
   }
-  //获取活动详情
+/**
+   * @summary 获取详情
+   * @description 通过id
+   * @router get /api/teacher/Teacherdetail
+   * @Request query integer *id
+   */
+  //获取详情
   async getDetail() {
     const { ctx, app } = this
     // 获取项目id 参数
@@ -34,6 +47,12 @@ class TeacherController extends Controller {
       
     }
   }
+  /**
+   * @summary 更新教师信息
+   * @description 修改更新
+   * @router post /api/teacher/editTeacherInfo
+   * @Request body string *
+   */
   //修改更新信息
   async editTeacherInfo() {
     const { ctx, app } = this
@@ -56,6 +75,12 @@ class TeacherController extends Controller {
       }
     }
   }
+  /**
+   * @summary 添加教师信息
+   * @description 添加
+   * @router post /api/teacher/addTeacherInfo
+   * @Request body string *
+   */
   //增加
   async addTeacherInfo() {
     const { ctx, app } = this
@@ -69,6 +94,12 @@ class TeacherController extends Controller {
       data: result,
     }
   }
+  /**
+   * @summary 删除教师信息
+   * @description 删除
+   * @router post /api/teacher/deleteTeacherInfo
+   * @Request body integer *id
+   */
   //删除
   async deleteTeacherInfo() {
     const { ctx, app } = this

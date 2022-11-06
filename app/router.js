@@ -18,7 +18,7 @@ module.exports = (app) => {
   router.post('/api/introduction/editIntroductionInfo', controller.introduction.editIntroductionInfo) //简介修改即删除即添加
   //项目操作
   router.get('/api/project/getProjectInfo', controller.project.getProjectInfo) // 获取项目数据
-  router.get('/api/project/detail/', controller.project.getDetail) // 获取项目详情
+  router.get('/api/project/detail', controller.project.getDetail) // 获取项目详情
   router.post('/api/project/editProjectInfo', controller.project.editProjectInfo) // 编辑项目数据
   router.post('/api/project/addProjectInfo', controller.project.addProjectInfo) // 添加项目数据
   router.post('/api/project/deleteProjectInfo', controller.project.deleteProjectInfo) // 删除项目数据
@@ -44,15 +44,15 @@ module.exports = (app) => {
   //团队学生（分方向，分页查询）
   router.get('/api/menber/getMenber', controller.menber.getMenberInfo) // 获取成员
   router.get('/api/menber/getDirection', controller.menber.getDirection) // 按方向获取
-  router.post('/api/menber/addMenber', controller.menber.addMenebrInfo) // 增
   router.post('/api/menber/editMenber', controller.menber.editMenebrInfo) // 改
+  router.post('/api/menber/addMenber', controller.menber.addMenebrInfo) // 增
   router.post('/api/menber/deleteMenber', controller.menber.deleteMenebrInfo) // 删
   //团队通告
   //加入我们（创业组、创业组内容填写，依据学号查询简历内容,改进，面试简历模板下载，打印，提交）
-  router.get('/api/resume/getresume', controller.resume.getResumeInfo) // 获取数据（创业组，创新组）
-  router.post('/api/resume/getDirection', controller.resume.addResumeInfo) // 提交简历（增）
-  router.post('/api/resume/getMenber', controller.resume.deleteResumeInfo) // 删
-  router.post('/api/resume/getMenber', controller.resume.editResumeInfo) // 改
+  router.get('/api/resume/getResume', controller.resume.getResumeInfo) // 获取数据（创业组，创新组）
+  router.post('/api/resume/addResume', controller.resume.addResumeInfo) // 提交简历（增）
+  router.post('/api/resume/deleteResume', controller.resume.deleteResumeInfo) // 删
+  router.post('/api/resume/editResume', controller.resume.editResumeInfo) // 改
 
 
 }

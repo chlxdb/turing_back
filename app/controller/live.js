@@ -1,8 +1,15 @@
 'use strict'
-
+/**
+ * @Controller 团队活动操作
+ */
 const Controller = require('egg').Controller
 //ctx 是上下文，可以在 ctx 中拿到全局对象 app
 class LiveController extends Controller {
+  /**
+   * @summary 获取活动信息
+   * @description 直接获取信息
+   * @router get /api/live/getLiveInfo
+   */
   // 获取信息
   async getLiveInfo() {
     const { ctx, app } = this
@@ -14,6 +21,12 @@ class LiveController extends Controller {
       data: result,
     }
   }
+  /**
+   * @summary 获取详情
+   * @description 通过id
+   * @router get /api/live/Livedetail
+   * @Request query integer *id
+   */
   //获取活动详情
   async getDetail() {
     const { ctx, app } = this
@@ -28,10 +41,14 @@ class LiveController extends Controller {
       data: [
         detail
       ]
-       
-      
     }
   }
+  /**
+   * @summary 更新活动信息
+   * @description 修改更新
+   * @router post /api/live/editLiveInfo
+   * @Request body string *
+   */
   //修改更新信息
   async editLiveInfo() {
     const { ctx, app } = this
@@ -54,6 +71,12 @@ class LiveController extends Controller {
       }
     }
   }
+  /**
+   * @summary 添加活动信息
+   * @description 添加
+   * @router post /api/live/addLiveInfo
+   * @Request body string *
+   */
   //增加
   async addLiveInfo() {
     const { ctx, app } = this
@@ -67,12 +90,18 @@ class LiveController extends Controller {
       data: result,
     }
   }
+  /**
+   * @summary 删除活动信息
+   * @description 删除
+   * @router post /api/live/deleteLiveInfo
+   * @Request body integer *id
+   */
   //删除
   async deleteLiveInfo() {
     const { ctx, app } = this
    const {id} = ctx.request.body
     try {
-      // 根据项目id删除项目数据
+      // 根据id删除数据
       await ctx.service.live.deleteLive(id)
       const result = await ctx.service.live.getLive()
       ctx.body = {

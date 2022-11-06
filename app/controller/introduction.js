@@ -2,17 +2,15 @@
 const Controller = require('egg').Controller
 
 /**
- * @Controller 简介信息
+ * @Controller 简介信息操作
  */
   
 class IntroductionController extends Controller {
- 
 /**
    * @summary 获取简介
-   * @description 根据组别获取负责人信息
+   * @description 直接获取信息
    * @router get /api/introduction/getIntroductionInfo
    */
-  
   // 获取介绍信息
   async getIntroductionInfo() {
     const { ctx, app } = this
@@ -25,7 +23,7 @@ class IntroductionController extends Controller {
   }
   /**
    * @summary 更新简历
-   * @description 嘻嘻嘻
+   * @description 修改更新
    * @router post /api/introduction/editIntroductionInfo
    * @Request body string *
    */

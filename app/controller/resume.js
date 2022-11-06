@@ -1,9 +1,18 @@
 'use strict'
-
+/**
+ * @Controller 团队简历操作
+ */
 const Controller = require('egg').Controller
 //ctx 是上下文，可以在 ctx 中拿到全局对象 app
 class ResumeController extends Controller {
+  /**
+   * @summary 获取简历信息
+   * @description 通过direction信息
+   * @router get /api/resume/getResume
+   * @Request query string *direction
+   */
   // 获取信息
+  
   async getResumeInfo() {
     const { ctx, app } = this
     const { direction='' } = ctx.query
@@ -15,7 +24,12 @@ class ResumeController extends Controller {
       data: result,
     }
   }
- 
+ /**
+   * @summary 更新简历信息
+   * @description 修改更新
+   * @router post /api/resume/editResume
+   * @Request body string *
+   */
   //修改更新信息
   async editResumeInfo() {
     const { ctx, app } = this
@@ -38,6 +52,12 @@ class ResumeController extends Controller {
       }
     }
   }
+   /**
+   * @summary 添加项目信息
+   * @description 添加
+   * @router post /api/resume/addResume
+   * @Request body string *
+   */
   //增加
   async addResumeInfo() {
     const { ctx, app } = this
@@ -51,6 +71,12 @@ class ResumeController extends Controller {
       data: result,
     }
   }
+   /**
+   * @summary 删除活动信息
+   * @description 删除
+   * @router post /api/resume/deleteResume
+   * @Request body integer *id
+   */
   //删除
   async deleteResumeInfo() {
     const { ctx, app } = this

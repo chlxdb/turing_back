@@ -1,10 +1,17 @@
 'use strict'
 
-
+/**
+ * @Controller 项目信息操作
+ */
 const Controller = require('egg').Controller
 
 //ctx 是上下文，可以在 ctx 中拿到全局对象 app
 class ProjectController extends Controller {
+  /**
+   * @summary 获取项目信息
+   * @description 直接获取信息
+   * @router get /api/project/getProjectInfo
+   */
   // 获取项目信息
   async getProjectInfo() {
     const { ctx, app } = this
@@ -18,6 +25,12 @@ class ProjectController extends Controller {
       data: projectInfo,
     }
   }
+  /**
+   * @summary 获取详情
+   * @description 通过id
+   * @router get /api/project/detail
+   * @Request query integer *projectId
+   */
   //获取项目详情
   async getDetail() {
     const { ctx, app } = this
@@ -37,6 +50,12 @@ class ProjectController extends Controller {
       
     }
   }
+  /**
+   * @summary 更新项目信息
+   * @description 修改更新
+   * @router post /api/project/editProjectInfo
+   * @Request body string *
+   */
   //修改更新项目信息
   async editProjectInfo() {
     const { ctx, app } = this
@@ -67,6 +86,12 @@ class ProjectController extends Controller {
       }
     }
   }
+  /**
+   * @summary 添加项目信息
+   * @description 添加
+   * @router post /api/project/addProjectInfo
+   * @Request body string *
+   */
   //增加项目
   async addProjectInfo() {
     const { ctx, app } = this
@@ -80,6 +105,12 @@ class ProjectController extends Controller {
       data: result,
     }
   }
+  /**
+   * @summary 删除项目信息
+   * @description 删除
+   * @router post /api/project/deleteProjectInfo
+   * @Request body integer *id
+   */
   //删除项目
   async deleteProjectInfo() {
     const { ctx, app } = this
