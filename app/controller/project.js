@@ -1,6 +1,8 @@
 'use strict'
-const Controller = require('./base');
-// const Controller = require('egg').Controller
+
+
+const Controller = require('egg').Controller
+
 //ctx 是上下文，可以在 ctx 中拿到全局对象 app
 class ProjectController extends Controller {
   // 获取项目信息

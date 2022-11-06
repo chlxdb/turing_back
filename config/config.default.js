@@ -14,6 +14,8 @@ module.exports = (appInfo) => {
 
   const config = (exports = {})
 
+
+
   // use for cookie sign key, should change to your own and keep security
   config.keys = appInfo.name + '_1665577664020_9414'
 
@@ -65,6 +67,24 @@ module.exports = (appInfo) => {
     credentials: true, // 允许 Cookie 跨域跨域
     allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
   }
+  // {app_root}/config/config.default.js
+
+  config.swaggerdoc = {
+    dirScanner: './app/controller', 
+    apiInfo: {
+      title: 'document', 
+      description: 'swagger', 
+      version: '1.0.0', 
+    },
+   
+    schemes: ['http', 'https'], 
+    consumes: ['application/json'], 
+    produces: ['application/json'], 
+    enableSecurity: false, 
+    routerMap: false, 
+    enable: true   
+  }
+  
   return {
     ...config,
     ...userConfig,

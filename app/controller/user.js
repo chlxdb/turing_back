@@ -1,9 +1,18 @@
 // controller/user.js
 'use strict'
 
+/**
+ * @Controller 用户信息
+ */
+  
 const Controller = require('egg').Controller
 //ctx 是上下文，可以在 ctx 中拿到全局对象 app
 class UserController extends Controller {
+  /**
+   * @description 注册接口
+   * @Router post /api/user/register
+   * @Request body string *
+   */
   async register() {
     const { ctx } = this
     const { username, password } = ctx.request.body // 获取注册需要的参数
@@ -55,6 +64,11 @@ class UserController extends Controller {
       }
     }
   }
+  /**
+   * @description 登录接口
+   * @Router get /api/user/login
+   * @Request query string *
+   */
   async login() {
     // app 为全局属性，相当于所有的插件方法都植入到了 app 对象。
     const { ctx, app } = this
