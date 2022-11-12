@@ -46,15 +46,13 @@ class ProjectController extends Controller {
       data: [
         detail
       ]
-       
-      
     }
   }
   /**
    * @summary 更新项目信息
    * @description 修改更新
    * @router post /api/project/editProjectInfo
-   * @Request body string *
+   * @Request body editProjectInfoRequest
    */
   //修改更新项目信息
   async editProjectInfo() {
@@ -90,7 +88,7 @@ class ProjectController extends Controller {
    * @summary 添加项目信息
    * @description 添加
    * @router post /api/project/addProjectInfo
-   * @Request body string *
+   * @Request body addProjectInfoRequest
    */
   //增加项目
   async addProjectInfo() {
@@ -109,7 +107,7 @@ class ProjectController extends Controller {
    * @summary 删除项目信息
    * @description 删除
    * @router post /api/project/deleteProjectInfo
-   * @Request body integer *id
+   * @Request body deleteProjectInfoRequest
    */
   //删除项目
   async deleteProjectInfo() {

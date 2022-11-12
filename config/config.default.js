@@ -38,13 +38,13 @@ module.exports = (appInfo) => {
     // 单数据库信息配置
     client: {
       // host
-      host: 'localhost',
+      host: '47.98.54.132',
       // 端口号
       port: '3306',
       // 用户名
-      user: 'root',
+      user: 'tring-backdata',
       // 密码
-      password: '', // Window 用户如果没有密码，可不填写
+      password: '7ChZfjJH6Xn7RnKT', // Window 用户如果没有密码，可不填写
       // 数据库名
       database: 'tring-backdata',
     },

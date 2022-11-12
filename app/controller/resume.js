@@ -12,7 +12,6 @@ class ResumeController extends Controller {
    * @Request query string *direction
    */
   // 获取信息
-  
   async getResumeInfo() {
     const { ctx, app } = this
     const { direction='' } = ctx.query

@@ -25,7 +25,7 @@ class IntroductionController extends Controller {
    * @summary 更新简历
    * @description 修改更新
    * @router post /api/introduction/editIntroductionInfo
-   * @Request body string *
+   * @Request body editIntroductionInfoRequest
    */
   //修改更新介绍信息
   async editIntroductionInfo() {

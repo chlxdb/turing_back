@@ -1,44 +1,31 @@
 module.exports = {
     editIntroductionInfoRequest:{
         introductionId: {
-            type: 'string',
+            type: 'integer',
             require: true,
             description: '简介id',
-            example:'user'
+            example:'0'
         },
         introductionInfo: {
             type: 'string',
-            require: true,
+            require: false,
             description: '介绍',
             example:'user'
         },
         introductionVideo:{
             type: 'string',
-            require: true,
+            require:false,
             description: '介绍视频',
             example:'user'
         }
     },
-    getDetailRequest:{
-        Id: {
-            type: 'string',
-            require: true,
-            description: 'id',
-        },    
-    },
-    deleteLeaderInfoRequest:{
-        Id: {
-            type: 'string',
-            require: true,
-            description: 'id',
-        }, 
-    },
+    
     editLeaderInfoRequest:{
         id: {
-            type: 'string',
+            type: 'integer',
             require: true,
             description: 'id',
-            example:'user'
+            example:0
         },
         incidentTitle: {
             type: 'string',
@@ -67,7 +54,7 @@ module.exports = {
     },
     addLeaderInfoRequest:{
         incidentTitle: {
-            type: 'string',
+            type: 'integer',
             require: true,
             description: 'title',
             example:'user'
@@ -91,12 +78,87 @@ module.exports = {
             example:'user'
         },
     },
+    deleteLeaderInfoRequest:{
+        Id: {
+            type: 'integer',
+            require: true,
+            description: 'id',
+            example:0
+        }, 
+    },
+    editProjectInfoRequest:{
+        projectId: {
+            type: 'integer',
+            require: true,
+            description: ' projectId',
+            example: 0
+        },
+        projectContent: {
+            type: 'string',
+            require: false,
+            description: 'projectContent',   
+            example:'user'
+        },
+        projectName: {
+            type: 'string',
+            require: false,
+            description: 'projectName',  
+            example:'user'   
+        },
+        projectGif: {
+            type: 'string',
+            require: false,
+            description: 'projectGif', 
+            example:'user'
+        },
+        projectPhotos: {
+            type: 'string',
+            require: false,
+            description: ' projectPhotos',
+            example:'user'
+        }
+    },
+    addProjectInfoRequest:{
+        projectContent: {
+            type: 'string',
+            require: false,
+            description: 'projectContent',   
+            example:'user'
+        },
+        projectName: {
+            type: 'string',
+            require: false,
+            description: 'projectName',  
+            example:'user'   
+        },
+        projectGif: {
+            type: 'string',
+            require: false,
+            description: 'projectGif', 
+            example:'user'
+        },
+        projectPhotos: {
+            type: 'string',
+            require: false,
+            description: ' projectPhotos',
+            example:'usersacd'
+        }
+    },
+    deleteProjectInfoRequest:{
+        projectId: {
+            type: 'integer',
+            require: true,
+            description: ' projectId',
+            example: 0
+        },
+    },
     registerRequest: {
         username: {
             type: 'string',
             require: true,
             description: '用户名',
             example:'user'
+
         },
         password: {
             type: 'string',
@@ -119,4 +181,4 @@ module.exports = {
             example:'users'
         }
     }
-}
+    }
