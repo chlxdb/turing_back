@@ -2,17 +2,14 @@
 
 
 module.exports = (app) => {
-  const { router, controller, middleware } = app
-  const _jwt = middleware.jwtErr(app.config.jwt.secret) // 传入加密字符串
-  router.post('/api/user/register', controller.user.register)
-  router.post('/api/user/login', controller.user.login)
-  router.get('/api/user/get_userinfo', _jwt, controller.user.getUserInfo) // 获取用户信息
-  router.post('/api/user/edit_userinfo', _jwt, controller.user.editUserInfo) // 修改用户个性签名
+  const { router, controller} = app
+  // const { router, controller, middleware } = app
+  // const _jwt = middleware.jwtErr(app.config.jwt.secret) // 传入加密字符串
+  // router.post('/api/user/register', controller.user.register)
+  // router.post('/api/user/login', controller.user.login)
+  // router.get('/api/user/get_userinfo', _jwt, controller.user.getUserInfo) // 获取用户信息
+  // router.post('/api/user/edit_userinfo', _jwt, controller.user.editUserInfo) // 修改用户个性签名
   router.post('/api/upload', controller.upload.upload) //上传
-
-
-
-
   //团队简介操作
   router.get('/api/introduction/getIntroductionInfo', controller.introduction.getIntroductionInfo)//简介获取
   router.post('/api/introduction/editIntroductionInfo', controller.introduction.editIntroductionInfo) //简介修改即删除即添加
@@ -29,6 +26,7 @@ module.exports = (app) => {
   router.post('/api/live/addLiveInfo', controller.live.addLiveInfo) // 添加活动数据
   router.post('/api/live/deleteLiveInfo', controller.live.deleteLiveInfo) // 删除活动数据
   //荣誉操作
+
   //领导视察
   router.get('/api/leader/getLeaderInfo', controller.leader.getLeaderInfo) // 获取视察数据
   router.get('/api/leader/Leaderdetail', controller.leader.getDetail) // 获取视察详情
@@ -53,6 +51,4 @@ module.exports = (app) => {
   router.post('/api/resume/addResume', controller.resume.addResumeInfo) // 提交简历（增）
   router.post('/api/resume/deleteResume', controller.resume.deleteResumeInfo) // 删
   router.post('/api/resume/editResume', controller.resume.editResumeInfo) // 改
-
-
 }
